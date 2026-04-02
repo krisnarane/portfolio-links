@@ -329,6 +329,97 @@
             font-size: 14px;
         }
 
+        /* Project/Community CTA */
+        .cta-box {
+            width: 100%;
+            align-self: stretch;
+            margin-top: 0;
+            background: linear-gradient(135deg, rgba(45, 45, 45, 0.6), rgba(30, 30, 30, 0.8));
+            border-radius: 14px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(226, 41, 196, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(226, 41, 196, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
+
+        .cta-box:hover {
+            border-color: #e229c4;
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(226, 41, 196, 0.3),
+                inset 0 0 30px rgba(226, 41, 196, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .cta-box:hover::before {
+            opacity: 1;
+        }
+
+        .cta-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+            min-width: 0;
+        }
+
+        .cta-icon {
+            font-size: 22px;
+            color: #e229c4;
+            min-width: 30px;
+            text-align: center;
+            transition: all 0.35s;
+        }
+
+        .cta-text {
+            font-size: 13px;
+            color: #d0d0d0;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            line-height: 1.4;
+        }
+
+        .cta-arrow {
+            font-size: 16px;
+            color: #666666;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box:hover .cta-icon {
+            transform: scale(1.1) rotate(6deg);
+        }
+
+        .cta-box:hover .cta-arrow {
+            color: #e229c4;
+            transform: translateX(4px);
+        }
+
         /* Section Title - Elegante */
         .section-title {
             font-size: 11px;
@@ -658,6 +749,10 @@
             .footer {
                 padding-top: 40px;
             }
+
+            .cta-box {
+                padding: 16px 18px;
+            }
         }
 
         /* Animations */
@@ -795,6 +890,18 @@
             </p>
         </div>
 
+        <a class="cta-box" href="https://eventos.cafebugado.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Eventos de tecnologia - Comunidade Café Bugado">
+            <div class="cta-content">
+                <div class="cta-icon" aria-hidden="true">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="cta-text" data-i18n="events-cta">Quer ir em eventos de Tecnologia ? Conheça nossa plataforma!</div>
+            </div>
+            <div class="cta-arrow" aria-hidden="true">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
+
         <!-- Contact Section -->
         <div class="contact-section">
             <div class="section-title" data-i18n="contact-title">Contato</div>
@@ -912,6 +1019,7 @@
                 'twitter-desc': 'Conteúdo sobre tech, dicas e muito mais',
                 'tiktok-label': 'TIKTOK',
                 'tiktok-desc': 'Rotina de eventos e trabalho',
+                'events-cta': 'Quer ir em eventos de Tecnologia ? Conheça meu projeto!',
                 'footer': '© 2026 Julia Krisnarane. Todos os direitos reservados.'
             },
             en: {
@@ -929,6 +1037,7 @@
                 'twitter-desc': 'Technology content, tips, and much more',
                 'tiktok-label': 'TIKTOK',
                 'tiktok-desc': 'Events and work routine',
+                'events-cta': 'Want to go to tech events? Check out my project!',
                 'footer': '© 2026 Julia Krisnarane. All rights reserved.'
             }
         };
